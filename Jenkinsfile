@@ -18,6 +18,7 @@ pipeline {
                     -Dextensions="container-image-jib"
                 '''
                 sh '''
+                    echo $QUAY_USR
                     ./mvnw package -DskipTests \
                     -Dquarkus.container-image.build=true \
                     -Dquarkus.container-image.registry=quay.io \
