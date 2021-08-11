@@ -18,8 +18,8 @@ pipeline {
                     -Dextensions="container-image-jib"
                 '''
                 sh '''
-                    sudo locale-gen en_US.UTF-8
-                    sudo dpkg-reconfigure locales
+                    locale-gen en_US.UTF-8
+                    dpkg-reconfigure locales
                     echo 1111
                     echo ${QUAY_USR}
                     echo ${QUAY_USER}
