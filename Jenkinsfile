@@ -18,7 +18,12 @@ pipeline {
                     -Dextensions="container-image-jib"
                 '''
                 sh '''
+                    echo 1111
+                    echo ${QUAY_USR}
+                    echo ${QUAY_USER}
                     echo $QUAY_USR
+                '''
+                sh '''
                     ./mvnw package -DskipTests \
                     -Dquarkus.container-image.build=true \
                     -Dquarkus.container-image.registry=quay.io \
